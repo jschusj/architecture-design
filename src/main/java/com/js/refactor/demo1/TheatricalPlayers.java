@@ -10,24 +10,8 @@ import java.util.Locale;
 public class TheatricalPlayers {
     public String print(Invoice invoice) {
         int totalAmount = new TotalAmountCalculator().getTotalAmount(invoice);
-        int volumeCredits = getVolumeCredits(invoice);
+        int volumeCredits = new VolumeCreditsCalculator().getVolumeCredits(invoice);
         return getResult(invoice, totalAmount, volumeCredits);
-    }
-
-    private int getVolumeCredits(Invoice invoice) {
-        int volumeCredits = 0;
-        for (Performance perf : invoice.performances) {
-            volumeCredits += getThisCredits(perf);
-        }
-        return volumeCredits;
-    }
-
-    private int getThisCredits(Performance perf) {
-        int thisCredits = Math.max(perf.audience - 30, 0);
-        if ("comedy".equals(perf.play.type)) {
-            thisCredits += Math.floor((double) perf.audience / 5);
-        }
-        return thisCredits;
     }
 
     private String getResult(Invoice invoice, int totalAmount, int volumeCredits) {
