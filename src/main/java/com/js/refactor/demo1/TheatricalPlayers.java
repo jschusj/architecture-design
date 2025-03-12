@@ -5,10 +5,20 @@ package com.js.refactor.demo1;
  * @Date：2025/3/12 22:55
  */
 public class TheatricalPlayers {
-    public String print(Invoice invoice) {
-        int totalAmount = new TotalAmountCalculator().getTotalAmount(invoice);
-        int volumeCredits = new VolumeCreditsCalculator().getVolumeCredits(invoice);
-        return new ResultFormatter().getResult(invoice, totalAmount, volumeCredits);
+    private TotalAmountCalculator totalAmountCalculator;
+    private VolumeCreditsCalculator volumeCreditsCalculator;
+    private ResultFormatter resultFormatter;
+
+    public TheatricalPlayers(TotalAmountCalculator totalAmountCalculator, VolumeCreditsCalculator volumeCreditsCalculator, ResultFormatter resultFormatter) {
+        this.totalAmountCalculator = totalAmountCalculator;
+        this.volumeCreditsCalculator = volumeCreditsCalculator;
+        this.resultFormatter = resultFormatter;
     }
 
+    public String print(Invoice invoice) {
+        int totalAmount = totalAmountCalculator.calculate(invoice);
+        int volumeCredits = volumeCreditsCalculator.calculate(invoice);
+        return resultFormatter.format(invoice, totalAmount, volumeCredits);
+    }
 }
+

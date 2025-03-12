@@ -8,7 +8,7 @@ import java.util.Locale;
  * @Date：2025/3/12 23:27
  */
 public class ResultFormatter {
-    String getResult(Invoice invoice, int totalAmount, int volumeCredits) {
+    String format(Invoice invoice, int totalAmount, int volumeCredits) {
         String result = String.format("Statement for %s\n", invoice.customer);
         NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
         result += String.format("Amount owed is %s\n", format.format(totalAmount / 100));

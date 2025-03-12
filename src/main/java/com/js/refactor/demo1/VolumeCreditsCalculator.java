@@ -5,7 +5,7 @@ package com.js.refactor.demo1;
  * @Date：2025/3/12 23:16
  */
 public class VolumeCreditsCalculator {
-    int getVolumeCredits(Invoice invoice) {
+    int calculate(Invoice invoice) {
         int volumeCredits = 0;
         for (Performance perf : invoice.performances) {
             int thisCredits = Math.max(perf.audience - 30, 0);
