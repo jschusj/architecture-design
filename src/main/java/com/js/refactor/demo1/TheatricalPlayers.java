@@ -9,26 +9,11 @@ import java.util.Locale;
  */
 public class TheatricalPlayers {
     public String print(Invoice invoice) {
-        int totalAmount = getTotalAmount(invoice);
+        int totalAmount = new TotalAmountCalculator().getTotalAmount(invoice);
         int volumeCredits = getVolumeCredits(invoice);
         return getResult(invoice, totalAmount, volumeCredits);
     }
 
-    private int getTotalAmount(Invoice invoice) {
-        int totalAmount = 0;
-        for (Performance perf : invoice.performances) {
-            totalAmount += getThisAmount(perf);
-        }
-        return totalAmount;
-    }
-
-    private int getThisAmount(Performance perf) {
-        int thisAmount = 40000;
-        if (perf.audience > 30) {
-            thisAmount += 1000 * (perf.audience - 30);
-        }
-        return thisAmount;
-    }
     private int getVolumeCredits(Invoice invoice) {
         int volumeCredits = 0;
         for (Performance perf : invoice.performances) {

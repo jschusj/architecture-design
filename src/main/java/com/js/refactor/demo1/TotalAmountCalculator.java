@@ -6,4 +6,15 @@ package com.js.refactor.demo1;
  */
 public class TotalAmountCalculator {
 
+    int getTotalAmount(Invoice invoice) {
+        int totalAmount = 0;
+        for (Performance perf : invoice.performances) {
+            int thisAmount = 40000;
+            if (perf.audience > 30) {
+                thisAmount += 1000 * (perf.audience - 30);
+            }
+            totalAmount += thisAmount;
+        }
+        return totalAmount;
+    }
 }
