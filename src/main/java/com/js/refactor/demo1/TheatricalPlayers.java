@@ -5,9 +5,9 @@ package com.js.refactor.demo1;
  * @Date：2025/3/12 22:55
  */
 public class TheatricalPlayers {
-    private TotalAmountCalculator totalAmountCalculator;
-    private VolumeCreditsCalculator volumeCreditsCalculator;
-    private ResultFormatter resultFormatter;
+    private final TotalAmountCalculator totalAmountCalculator;
+    private final VolumeCreditsCalculator volumeCreditsCalculator;
+    private final ResultFormatter resultFormatter;
 
     public TheatricalPlayers(TotalAmountCalculator totalAmountCalculator, VolumeCreditsCalculator volumeCreditsCalculator, ResultFormatter resultFormatter) {
         this.totalAmountCalculator = totalAmountCalculator;
