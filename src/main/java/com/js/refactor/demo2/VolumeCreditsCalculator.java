@@ -4,8 +4,10 @@ package com.js.refactor.demo2;
  * @Author：YangTao
  * @Date：2025/3/12 23:16
  */
-public class VolumeCreditsCalculator {
-    int calculate(Invoice invoice) {
+public class VolumeCreditsCalculator implements InvoiceCalculator {
+
+    @Override
+    public int calculate(Invoice invoice) {
         int volumeCredits = 0;
         for (Performance perf : invoice.performances) {
             int thisCredits = Math.max(perf.audience - 30, 0);
