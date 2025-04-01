@@ -1,0 +1,15 @@
+package com.js.oop;
+
+/**
+ * 法杖
+ *
+ * @Author：YangTao
+ * @Date：2025/4/1 19:53
+ */
+public class Staff extends Weapon {
+
+    public Staff(String name, int damage) {
+        super(name, damage);
+        damageType = 2;
+    }
+}
