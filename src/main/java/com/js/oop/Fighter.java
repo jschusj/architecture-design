@@ -13,4 +13,9 @@ public class Fighter extends Player {
 
     private String name;
 
+    private Sword weapon;
+
+    public Fighter(String name) {
+        this.name = name;
+    }
 }

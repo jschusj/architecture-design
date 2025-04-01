@@ -75,4 +75,17 @@ public class BattleTest {
         assertThat(orc.getHealth()).isEqualTo(100 - 10);
     }
 
+    @Test
+    public void testEquip() {
+        Fighter fighter = new Fighter("Hero");
+
+        Sword sword = new Sword("Sword", 10);
+        fighter.setWeapon(sword);
+
+        Staff staff = new Staff("Staff", 10);
+        fighter.setWeapon(staff);
+
+        assertThat(fighter.getWeapon()).isInstanceOf(Staff.class); // 错误了
+    }
+
 }
