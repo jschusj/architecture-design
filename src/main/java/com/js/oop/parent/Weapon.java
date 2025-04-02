@@ -1,4 +1,4 @@
-package com.js.oop;
+package com.js.oop.parent;
 
 import lombok.Data;
 
@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 public class Weapon {
     int damage;
-    int damageType; //  // 0 - physical, 1 - fire, 2 - ice etc.
+    public int damageType; //  // 0 - physical, 1 - fire, 2 - ice etc.
     String name;
 
     public Weapon(String name, int damage) {

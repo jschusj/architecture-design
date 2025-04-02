@@ -1,5 +1,9 @@
 package com.js.oop;
 
+import com.js.oop.parent.Monster;
+import com.js.oop.parent.Player;
+import com.js.oop.parent.Weapon;
+
 /**
  * 龙
  *

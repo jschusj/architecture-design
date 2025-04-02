@@ -1,5 +1,6 @@
 package com.js.oop;
 
+import com.js.oop.parent.Player;
 import lombok.AllArgsConstructor;
 
 /**

@@ -1,5 +1,7 @@
 package com.js.oop;
 
+import com.js.oop.parent.Monster;
+
 /**
  * 精灵
  *

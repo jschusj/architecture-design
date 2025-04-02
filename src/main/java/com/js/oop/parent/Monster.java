@@ -1,4 +1,4 @@
-package com.js.oop;
+package com.js.oop.parent;
 
 import lombok.Data;
 
