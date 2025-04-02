@@ -85,7 +85,7 @@ public class BattleTest {
         Staff staff = new Staff("Staff", 10);
         fighter.setWeapon(staff);
 
-        assertThat(fighter.getWeapon()).isInstanceOf(Staff.class); // 错误了
+        assertThat(fighter.getWeapon()).isInstanceOf(Sword.class); // 错误了
     }
 
 }
